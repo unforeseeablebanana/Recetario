@@ -37,10 +37,10 @@ fun AppNavigation() {
             BrownieView(navController = navController)
         }
         composable(AppRoutes.COOKIES) {
-            CookiesView()
+            CookiesView(navController = navController)
         }
         composable(AppRoutes.CARROT) {
-            CarrotCakeView()
+            CarrotCakeView(navController = navController)
         }
     }
 }
