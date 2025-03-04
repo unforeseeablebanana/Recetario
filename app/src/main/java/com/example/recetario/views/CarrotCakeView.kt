@@ -1,6 +1,7 @@
 package com.example.recetario.views
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -26,34 +27,30 @@ import com.example.recetario.navigation.AppRoutes
 
 @Composable
 fun CarrotCakeView(navController: NavController) {
-    val backgroundImage: Painter = painterResource(id = R.drawable.cooking)
     val items = List(50) { "Elemento #$it" }
     Box(
         modifier = Modifier.fillMaxSize()
+            .background(Color(238,231,213))
     ) {
-        Image(
-            painter = backgroundImage,
-            contentDescription = "Imagen de fondo",
-            contentScale = ContentScale.Crop,
-            modifier = Modifier
-                .fillMaxSize()
-                .alpha(0.5f)
-        )
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(16.dp)
         ) {
             items(1) { item ->
+                Box(
+                    Modifier.fillMaxSize()
+                        .background(Color(255, 195, 0))
+                ){
                 Text(
-                    text = "I N G R E D I E N T E S\n",
-                    color = Color.White,
+                    text = "I N G R E D I E N T E S",
+                    color = Color.Black,
                     fontWeight = FontWeight.Bold,
-                    fontFamily = FontFamily.Cursive,
-                    fontSize = 30.sp
-                )
+                    fontSize = 30.sp,
+                    fontFamily = FontFamily.Monospace
+                )}
                 Text(
-                    text = "2 ½ tazas de zanahoria rallada\n" +
+                    text = "\n2 ½ tazas de zanahoria rallada\n" +
                             "3 tazas de harina de trigo\n" +
                             "6 huevos\n" +
                             "2 tazas de aceite vegetal\n" +
@@ -67,17 +64,20 @@ fun CarrotCakeView(navController: NavController) {
                             "3 tazas de azúcar glass\n" +
                             "1 chorrito de extracto de vainilla\n" +
                             "Nueces troceadas para decorar\n",
-                    color = Color.White,
-                    fontFamily = FontFamily.Cursive,
+                    color = Color.Black,
+                    fontFamily = FontFamily.Monospace,
                     fontSize = 22.sp
                 )
+                Box(
+                    Modifier.fillMaxSize()
+                        .background(Color(255, 195, 0))
+                ){
                 Text(
-                    text = "P R E P A R A C I Ó N\n",
-                    color = Color.White,
-                    fontWeight = FontWeight.Bold,
-                    fontFamily = FontFamily.Cursive,
+                    text = "P R E P A R A C I Ó N",
+                    color = Color.Black,
+                    fontFamily = FontFamily.Monospace,
                     fontSize = 30.sp
-                )
+                )}
                 Text(
                     text = "\n1. MASA: Incorpora en un bol los ingredientes secos: la harina, sal, azúcar, canela, polvo de hornear y el bicarbonato de sodio.\n" +
                             "Precalienta el horno a 180 °C.\n" +
@@ -86,8 +86,8 @@ fun CarrotCakeView(navController: NavController) {
                             "Agrega poco a poco los seis huecos y mezcla.\n" +
                             "Por último, incorpora la zanahoria rallada y las nueces troceadas. Integra muy bien.\n" +
                             "Vierte la mezcla en un molde engrasado y enharinado.\n",
-                    color = Color.White,
-                    fontFamily = FontFamily.Cursive,
+                    color = Color.Black,
+                    fontFamily = FontFamily.Monospace,
                     fontWeight = FontWeight.Bold,
                     fontSize = 22.sp,
                     textAlign = TextAlign.Justify
@@ -99,8 +99,8 @@ fun CarrotCakeView(navController: NavController) {
                             "Cuando el pastel esté horneado, deja reposar y desmolda.\n" +
                             "Unas vez a temperatura ambiente, cúbrelo con el betún.\n" +
                             "Decora con las nueves troceadas y listo.\n",
-                    color = Color.White,
-                    fontFamily = FontFamily.Cursive,
+                    color = Color.Black,
+                    fontFamily = FontFamily.Monospace,
                     fontWeight = FontWeight.Bold,
                     fontSize = 22.sp,
                     textAlign = TextAlign.Justify
