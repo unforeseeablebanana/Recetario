@@ -4,16 +4,16 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.recetario.views.BrownieView
 import com.example.recetario.views.CarrotCakeView
 import com.example.recetario.views.CookiesView
-import com.example.recetario.views.CrossaintView
 import com.example.recetario.views.HomeView
+import com.example.recetario.views.IceCreamView
+import com.example.recetario.views.PannaCottaView
 
 object AppRoutes {
     const val HOME = "home"
-    const val CROSSAINT = "crossaint"
-    const val BROWNIE = "brownie"
+    const val PANNACOTTA = "pannacotta"
+    const val ICECREAM = "icecream"
     const val COOKIES = "cookies"
     const val CARROT = "carrot"
 }
@@ -30,11 +30,11 @@ fun AppNavigation() {
             HomeView(navController = navController)
         }
         // Otras pantallas.
-        composable(AppRoutes.CROSSAINT) {
-            CrossaintView(navController = navController)
+        composable(AppRoutes.PANNACOTTA) {
+            PannaCottaView(navController = navController)
         }
-        composable(AppRoutes.BROWNIE) {
-            BrownieView(navController = navController)
+        composable(AppRoutes.ICECREAM) {
+            IceCreamView(navController = navController)
         }
         composable(AppRoutes.COOKIES) {
             CookiesView(navController = navController)

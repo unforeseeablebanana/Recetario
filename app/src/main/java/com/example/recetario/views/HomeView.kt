@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
@@ -24,7 +23,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
@@ -35,7 +33,6 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.recetario.R
 import com.example.recetario.components.MainButton
-import com.example.recetario.components.TitleBar
 import com.example.recetario.navigation.AppRoutes
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -94,20 +91,20 @@ private fun ContentViewH(navController: NavController, modifier: Modifier = Modi
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.padding(15.dp)
             ) {
-                ImageView(R.drawable.icecream, "Icecream")
+                ImageView(R.drawable.pannacotta, "Pannacotta")
                 Spacer(modifier = Modifier.width(16.dp))
-                MainButton("ICE CREAM", Color(255, 195, 0), Color.Black) {
-                    navController.navigate(AppRoutes.CROSSAINT)
+                MainButton("PANNA-COTTA", Color(255, 195, 0), Color.Black) {
+                    navController.navigate(AppRoutes.PANNACOTTA)
                 }
             }
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.padding(15.dp)
             ) {
-                ImageView(R.drawable.pannacotta, "Pannacotta")
+                ImageView(R.drawable.icecream, "Icecream")
                 Spacer(modifier = Modifier.width(16.dp))
-                MainButton("PANNA-COTTA", Color(255, 195, 0), Color.Black) {
-                    navController.navigate(AppRoutes.BROWNIE)
+                MainButton("ICE CREAM", Color(255, 195, 0), Color.Black) {
+                    navController.navigate(AppRoutes.ICECREAM)
                 }
             }
             Row(

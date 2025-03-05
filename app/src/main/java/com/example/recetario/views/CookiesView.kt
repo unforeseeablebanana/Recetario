@@ -50,16 +50,16 @@ fun CookiesView(navController: NavController) {
                     fontSize = 30.sp
                 )}
                 Text(
-                    text = "\n1 ¼ tazas de harina de trigo\n" +
-                            "¾ taza de azúcar moreno\n" +
-                            "½ taza de azúcar blanca\n" +
-                            "½ taza de mantequilla derretida sin sal\n" +
-                            "1 cdita de extracto de vainilla\n" +
-                            "1 huevo\n" +
-                            "150 gr de chocolate negro troceado\n" +
-                            "Chispas de chocolate al gusto\n" +
-                            "½ cdita de bicarbonato de sodio\n" +
-                            "1 cdita de sal\n",
+                    text = "\n- 1 ¼ tazas de harina de trigo\n" +
+                            "- ¾ taza de azúcar moreno\n" +
+                            "- ½ taza de azúcar blanca\n" +
+                            "- ½ taza de mantequilla derretida sin sal\n" +
+                            "- 1 cdita de extracto de vainilla\n" +
+                            "- 1 huevo\n" +
+                            "- 150 gr de chocolate negro troceado\n" +
+                            "- Chispas de chocolate al gusto\n" +
+                            "- ½ cdita de bicarbonato de sodio\n" +
+                            "- Una pizca de sal\n",
                     color = Color.Black,
                     fontFamily = FontFamily.Monospace,
                     fontSize = 22.sp
@@ -108,7 +108,8 @@ fun CookiesView(navController: NavController) {
                     textAlign = TextAlign.Justify
                 )
                 UndoButton() {
-                    navController.navigate(AppRoutes.HOME)
+                    //navController.navigate(AppRoutes.HOME)
+                    navController.popBackStack()
                 }
             }
         }

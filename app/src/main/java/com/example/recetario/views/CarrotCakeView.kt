@@ -50,20 +50,20 @@ fun CarrotCakeView(navController: NavController) {
                     fontFamily = FontFamily.Monospace
                 )}
                 Text(
-                    text = "\n2 ½ tazas de zanahoria rallada\n" +
-                            "3 tazas de harina de trigo\n" +
-                            "6 huevos\n" +
-                            "2 tazas de aceite vegetal\n" +
-                            "⅓ taza de nuez troceadas\n" +
-                            "2 cditas de polvo para hornear\n" +
-                            "1 cdita de bicarbonato de sodio\n" +
-                            "1 ½ taza de azúcar\n" +
-                            "2 cdas de canela\n" +
-                            "200 gr de mantequilla\n" +
-                            "380 gr de queso crema\n" +
-                            "3 tazas de azúcar glass\n" +
-                            "1 chorrito de extracto de vainilla\n" +
-                            "Nueces troceadas para decorar\n",
+                    text = "\n- 2 ½ tazas de zanahoria rallada\n" +
+                            "- 3 tazas de harina de trigo\n" +
+                            "- 6 huevos\n" +
+                            "- 2 tazas de aceite vegetal\n" +
+                            "- ⅓ taza de nuez troceadas\n" +
+                            "- 2 cditas de polvo para hornear\n" +
+                            "- 1 cdita de bicarbonato de sodio\n" +
+                            "- 1 ½ taza de azúcar\n" +
+                            "- 2 cdas de canela\n" +
+                            "- 200 gr de mantequilla\n" +
+                            "- 380 gr de queso crema\n" +
+                            "- 3 tazas de azúcar glass\n" +
+                            "- 1 chorrito de extracto de vainilla\n" +
+                            "- Nueces troceadas para decorar\n",
                     color = Color.Black,
                     fontFamily = FontFamily.Monospace,
                     fontSize = 22.sp
@@ -106,7 +106,7 @@ fun CarrotCakeView(navController: NavController) {
                     textAlign = TextAlign.Justify
                 )
                 UndoButton() {
-                    navController.navigate(AppRoutes.HOME)
+                    navController.popBackStack()
                 }
             }
         }
