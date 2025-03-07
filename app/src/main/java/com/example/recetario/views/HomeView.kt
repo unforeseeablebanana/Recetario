@@ -11,9 +11,11 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
@@ -30,6 +32,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.recetario.R
 import com.example.recetario.components.MainButton
@@ -55,7 +58,7 @@ fun HomeView(navController: NavController) {
                             fontFamily = FontFamily.Monospace)
                     },
                     colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-                        containerColor = Color(255,231,210)
+                        containerColor = Color(255,231,210).copy(0.8f) // Copy es para agregar transparencia al Box.
                     )
                 )
             }
@@ -82,49 +85,119 @@ private fun ContentViewH(navController: NavController, modifier: Modifier = Modi
                 .fillMaxSize()
                 .alpha(0.5f)
         )
-        Column(
-            modifier = Modifier.fillMaxSize(),
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxSize(),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.Start //Las opciones están alineadas a la izquierda y no en el centro.
         ) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier.padding(15.dp)
-            ) {
-                ImageView(R.drawable.pannacotta, "Pannacotta")
-                Spacer(modifier = Modifier.width(16.dp))
-                MainButton("PANNA-COTTA", Color(255, 195, 0), Color.Black) {
-                    navController.navigate(AppRoutes.PANNACOTTA)
+            items(1) { item ->
+                Spacer(modifier = Modifier.height(40.dp)) //Spacer para que no se pegue a la barra de título.
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(15.dp)
+                ) {
+                    ImageView(R.drawable.pannacotta, "Pannacotta")
+                    Spacer(modifier = Modifier.width(16.dp))
+                    Column(
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        Text(
+                            text = "PANNA-COTTA",
+                            color = Color.Black,
+                            fontWeight = FontWeight.Bold,
+                            fontFamily = FontFamily.Monospace,
+                            fontSize = 20.sp
+                        )
+                        Text(
+                            text = "Delicioso postre italiano de crema suave.",
+                            color = Color.Black,
+                            fontFamily = FontFamily.Monospace,
+                            fontSize = 18.sp
+                        )
+                        MainButton("VER RECETA", Color(255, 195, 0), Color.Black) {
+                            navController.navigate(AppRoutes.PANNACOTTA)
+                        }
+                    }
                 }
-            }
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier.padding(15.dp)
-            ) {
-                ImageView(R.drawable.icecream, "Icecream")
-                Spacer(modifier = Modifier.width(16.dp))
-                MainButton("ICE CREAM", Color(255, 195, 0), Color.Black) {
-                    navController.navigate(AppRoutes.ICECREAM)
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(15.dp)
+                ) {
+                    ImageView(R.drawable.icecream, "Icecream")
+                    Spacer(modifier = Modifier.width(16.dp))
+                    Column(
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        Text(
+                            text = "HELADO",
+                            color = Color.Black,
+                            fontWeight = FontWeight.Bold,
+                            fontFamily = FontFamily.Monospace,
+                            fontSize = 20.sp
+                        )
+                        Text(
+                            text = "Clásico helado cremoso de vainilla.",
+                            color = Color.Black,
+                            fontFamily = FontFamily.Monospace,
+                            fontSize = 18.sp
+                        )
+                        MainButton("VER RECETA", Color(255, 195, 0), Color.Black) {
+                            navController.navigate(AppRoutes.ICECREAM)
+                        }
+                    }
                 }
-            }
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier.padding(15.dp)
-            ) {
-                ImageView(R.drawable.cookie, "Cookie")
-                Spacer(modifier = Modifier.width(16.dp))
-                MainButton("CHOCOLATE COOKIES", Color(255, 195, 0), Color.Black) {
-                    navController.navigate(AppRoutes.COOKIES)
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(15.dp)
+                ) {
+                    ImageView(R.drawable.cookie, "Cookie")
+                    Spacer(modifier = Modifier.width(16.dp))
+                    Column(
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        Text(
+                            text = "GALLETA DE CHOCOLATE",
+                            color = Color.Black,
+                            fontWeight = FontWeight.Bold,
+                            fontFamily = FontFamily.Monospace,
+                            fontSize = 20.sp
+                        )
+                        Text(
+                            text = "Galletas clásicas de chocolate.",
+                            color = Color.Black,
+                            fontFamily = FontFamily.Monospace,
+                            fontSize = 18.sp
+                        )
+                        MainButton("VER RECETA", Color(255, 195, 0), Color.Black) {
+                            navController.navigate(AppRoutes.COOKIES)
+                        }
+                    }
                 }
-            }
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier.padding(15.dp)
-            ) {
-                ImageView(R.drawable.cake, "Cake")
-                Spacer(modifier = Modifier.width(16.dp))
-                MainButton("CARROT CAKE", Color(255, 195, 0), Color.Black) {
-                    navController.navigate(AppRoutes.CARROT)
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(15.dp)
+                ) {
+                    ImageView(R.drawable.cake, "Cake")
+                    Spacer(modifier = Modifier.width(16.dp))
+                    Column(verticalArrangement = Arrangement.Center) {
+                        Text(
+                            text = "PASTEL DE ZANAHORIA",
+                            color = Color.Black,
+                            fontWeight = FontWeight.Bold,
+                            fontFamily = FontFamily.Monospace,
+                            fontSize = 20.sp
+                        )
+                        Text(
+                            text = "Pastel esponjoso de zanahoria con canela.",
+                            color = Color.Black,
+                            fontFamily = FontFamily.Monospace,
+                            fontSize = 18.sp
+                        )
+                        MainButton("VER RECETA", Color(255, 195, 0), Color.Black) {
+                            navController.navigate(AppRoutes.CARROT)
+                        }
+                    }
                 }
             }
         }

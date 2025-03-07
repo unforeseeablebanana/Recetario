@@ -2,15 +2,22 @@ package com.example.recetario.views
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
@@ -38,6 +45,21 @@ fun CarrotCakeView(navController: NavController) {
                 .padding(16.dp)
         ) {
             items(1) { item ->
+                Spacer(modifier = Modifier.height(10.dp))
+                Image(painter = painterResource(R.drawable.carrotr),
+                    contentDescription = "",
+                    contentScale = ContentScale.FillWidth,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .size(250.dp)
+                        .border(
+                            width = 1.dp,
+                            color = Color.Transparent,
+                            shape = RoundedCornerShape(16.dp)
+                        )
+                        .shadow(8.dp, shape = RoundedCornerShape(21.dp))
+                )
+                Spacer(modifier = Modifier.height(40.dp))
                 Box(
                     Modifier.fillMaxSize()
                         .background(Color(255, 195, 0))
@@ -46,7 +68,7 @@ fun CarrotCakeView(navController: NavController) {
                     text = "I N G R E D I E N T E S",
                     color = Color.Black,
                     fontWeight = FontWeight.Bold,
-                    fontSize = 30.sp,
+                    fontSize = 25.sp,
                     fontFamily = FontFamily.Monospace
                 )}
                 Text(
@@ -76,16 +98,17 @@ fun CarrotCakeView(navController: NavController) {
                     text = "P R E P A R A C I Ó N",
                     color = Color.Black,
                     fontFamily = FontFamily.Monospace,
-                    fontSize = 30.sp
+                    fontSize = 25.sp
                 )}
                 Text(
-                    text = "\n1. MASA: Incorpora en un bol los ingredientes secos: la harina, sal, azúcar, canela, polvo de hornear y el bicarbonato de sodio.\n" +
-                            "Precalienta el horno a 180 °C.\n" +
-                            "Mezcla muy bien con la ayuda de un batidor manual hasta que se integre todo.\n" +
-                            "Vierte el aceite y mezcla para que se indique con los ingredientes secos.\n" +
-                            "Agrega poco a poco los seis huecos y mezcla.\n" +
-                            "Por último, incorpora la zanahoria rallada y las nueces troceadas. Integra muy bien.\n" +
-                            "Vierte la mezcla en un molde engrasado y enharinado.\n",
+                    text = "\nMASA: \n" +
+                            "1. Incorpora en un bol los ingredientes secos: la harina, sal, azúcar, canela, polvo de hornear y el bicarbonato de sodio.\n" +
+                            "2. Precalienta el horno a 180 °C.\n" +
+                            "3. Mezcla muy bien con la ayuda de un batidor manual hasta que se integre todo.\n" +
+                            "4. Vierte el aceite y mezcla para que se indique con los ingredientes secos.\n" +
+                            "5. Agrega poco a poco los seis huecos y mezcla.\n" +
+                            "6. Por último, incorpora la zanahoria rallada y las nueces troceadas. Integra muy bien.\n" +
+                            "7. Vierte la mezcla en un molde engrasado y enharinado.\n",
                     color = Color.Black,
                     fontFamily = FontFamily.Monospace,
                     fontWeight = FontWeight.Bold,
@@ -93,12 +116,13 @@ fun CarrotCakeView(navController: NavController) {
                     textAlign = TextAlign.Justify
                 )
                 Text(
-                    text = "\n2. HORNO: Hornea durante una hora aproximadamente o hasta que introduzcas un palillo y salga limpio.\n" +
-                            "Mientras se hornea, con la ayuda de una batidora eléctrica o manual, incorpora la mantequilla y bate hasta cremar.\n" +
-                            "Incorpora el queso crema, el azúcar glass y la vainilla. Mezcla hasta que se integre y quede una mezcla suave.\n" +
-                            "Cuando el pastel esté horneado, deja reposar y desmolda.\n" +
-                            "Unas vez a temperatura ambiente, cúbrelo con el betún.\n" +
-                            "Decora con las nueves troceadas y listo.\n",
+                    text = "\nHORNO: \n" +
+                            "8. Hornea durante una hora aproximadamente o hasta que introduzcas un palillo y salga limpio.\n" +
+                            "9. Mientras se hornea, con la ayuda de una batidora eléctrica o manual, incorpora la mantequilla y bate hasta cremar.\n" +
+                            "10. Incorpora el queso crema, el azúcar glass y la vainilla. Mezcla hasta que se integre y quede una mezcla suave.\n" +
+                            "11. Cuando el pastel esté horneado, deja reposar y desmolda.\n" +
+                            "12. Unas vez a temperatura ambiente, cúbrelo con el betún.\n" +
+                            "13. Decora con las nueves troceadas y listo.\n",
                     color = Color.Black,
                     fontFamily = FontFamily.Monospace,
                     fontWeight = FontWeight.Bold,
